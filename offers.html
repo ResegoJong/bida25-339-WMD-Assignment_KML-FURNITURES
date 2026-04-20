@@ -1,1 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exclusive Offers | KML Furniture</title>
+    <style>
+        /* Base Styles */
+        body { 
+            margin: 0; 
+            font-family: sans-serif; 
+            color: #333; 
+            background-color: #fdfdfb; 
+        }
+
+        /* Nav Bar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background: white;
+            border-bottom: 1px solid #eee;
+        }
+
+        .logo { font-size: 18px; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; }
+        .links a { margin-left: 15px; text-decoration: none; color: #333; font-size: 13px; }
+
+        /* Banner */
+        .promo-banner {
+            background-color: #a4b48b;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            font-size: 14px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        h2 {
+            font-family: serif;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 10px;
+            font-weight: 400;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #777;
+            margin-bottom: 50px;
+        }
+
+        /* Offers Grid (Table Look) */
+        .offers-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* 2 larger cells for focus */
+            border-top: 1px solid #a4b48b;
+            border-left: 1px solid #a4b48b;
+        }
+
+        .offer-cell {
+            position: relative;
+            border-right: 1px solid #a4b48b;
+            border-bottom: 1px solid #a4b48b;
+            padding: 50px 30px;
+            text-align: center;
+            background-color: white;
+        }
+
+        /* Sale Tag */
+        .sale-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: #d9534f;
+            color: white;
+            padding: 5px 15px;
+            font-size: 12px;
+            font-weight: bold;
+            border-radius: 20px;
+        }
+
+        .offer-image {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            margin-bottom: 25px;
+        }
+
+        .offer-title {
+            font-family: serif;
+            font-size: 20px;
+            margin: 10px 0;
+            text-transform: uppercase;
+        }
+
+        .price-row {
+            margin-bottom: 20px;
+        }
+
+        .old-price {
+            text-decoration: line-through;
+            color: #999;
+            margin-right: 10px;
+        }
+
+        .new-price {
+            color: #d9534f; /* Red for sale price */
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .add-link {
+            color: #a4b48b;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-bottom: 1px solid #a4b48b;
+            padding-bottom: 2px;
+        }
+
+        /* Newsletter Section */
+        .newsletter {
+            background-color: #f4f4f2;
+            padding: 60px 20px;
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .newsletter input {
+            padding: 10px;
+            width: 250px;
+            border: 1px solid #ccc;
+            outline: none;
+        }
+
+        .newsletter button {
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Responsive */
+        @media (max-width: 800px) {
+            .offers-grid { grid-template-columns: 1fr; }
+            .offer-image { height: 250px; }
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="promo-banner">
+        Limited Time Only: Free shipping on all orders over P5,000
+    </div>
+
+    <div class="navbar">
+        <div class="logo">KML FURNITURE</div>
+        <div class="links">
+            <a href="index.html">Home</a>
+            <a href="products.html">Products</a>
+            <a href="about.html">About</a>
+            <a href="#" style="font-weight: bold; color: #d9534f;">Offers</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>Seasonal Steals</h2>
+        <p class="subtitle">Premium comfort at a fraction of the cost.</p>
+        
+        <div class="offers-grid">
+            <div class="offer-cell">
+                <div class="sale-badge">30% OFF</div>
+                <img src="https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?auto=format&fit=crop&w=800" class="offer-image">
+                <div class="offer-title">Velvet Accent Chair</div>
+                <div class="price-row">
+                    <span class="old-price">P2,100.00</span>
+                    <span class="new-price">P1,470.00</span>
+                </div>
+                <a href="#" class="add-link">Add to Cart</a>
+            </div>
+
+            <div class="offer-cell">
+                <div class="sale-badge">20% OFF</div>
+                <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=800" class="offer-image">
+                <div class="offer-title">Minimalist Work Desk</div>
+                <div class="price-row">
+                    <span class="old-price">P3,500.00</span>
+                    <span class="new-price">P2,800.00</span>
+                </div>
+                <a href="#" class="add-link">Add to Cart</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="newsletter">
+        <h3>Join the Inner Circle</h3>
+        <p>Get early access to future offers and new collections.</p>
+        <input type="email" placeholder="Enter your email">
+        <button>Subscribe</button>
+    </div>
+
+    <footer>
+        <div style="font-size: 12px; color: #888;">&copy; 2026 KML Furniture. All rights reserved.</div>
+    </footer>
+
+</body>
+</html>
 
