@@ -1,1 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | KML Furniture</title>
+    <style>
+        /* Base Styles */
+        body { 
+            margin: 0; 
+            font-family: sans-serif; 
+            color: #333; 
+            background-color: #fdfdfb; 
+        }
+
+        /* Nav Bar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background: white;
+            border-bottom: 1px solid #eee;
+        }
+
+        .logo { font-size: 18px; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; }
+        .links a { margin-left: 15px; text-decoration: none; color: #333; font-size: 13px; }
+
+        .container {
+            max-width: 1000px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        h2 {
+            font-family: serif;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 40px;
+            font-weight: 400;
+        }
+
+        /* Split Contact Grid */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            border-top: 1px solid #a4b48b;
+            border-left: 1px solid #a4b48b;
+            background-color: white;
+        }
+
+        .contact-cell {
+            padding: 50px;
+            border-right: 1px solid #a4b48b;
+            border-bottom: 1px solid #a4b48b;
+        }
+
+        /* Form Styling */
+        .contact-form label {
+            display: block;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            color: #777;
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            font-family: inherit;
+            box-sizing: border-box;
+        }
+
+        .submit-btn {
+            background-color: #a4b48b;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            width: 100%;
+            transition: opacity 0.2s;
+        }
+
+        .submit-btn:hover { opacity: 0.8; }
+
+        /* Socials & Info Styling */
+        .info-title {
+            font-family: serif;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .social-link {
+            display: block;
+            margin: 15px 0;
+            color: #333;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .social-link span {
+            color: #a4b48b;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .contact-grid { grid-template-columns: 1fr; }
+            .navbar { flex-direction: column; gap: 15px; }
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 30px;
+            text-align: center;
+            margin-top: 60px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <div class="logo">KML FURNITURE</div>
+        <div class="links">
+            <a href="index.html">Home</a>
+            <a href="products.html">Products</a>
+            <a href="about.html">About</a>
+            <a href="#" style="font-weight: bold;">Contact</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>Get In Touch</h2>
+        
+        <div class="contact-grid">
+            <div class="contact-cell">
+                <div class="info-title">Send us a Message</div>
+                <form class="contact-form">
+                    <label>Your Name</label>
+                    <input type="text" placeholder="Enter your name">
+                    
+                    <label>Email Address</label>
+                    <input type="email" placeholder="customer@icloud.com">
+                    
+                    <label>Message</label>
+                    <textarea rows="5" placeholder="How can we help you?"></textarea>
+                    
+                    <button type="submit" class="submit-btn">Send Feedback</button>
+                </form>
+            </div>
+
+            <div class="contact-cell">
+                <div class="info-title">Contact Details</div>
+                <p style="color: #777; margin-bottom: 30px;">Email: kml@gmail.com<br>Support: Mon-Fri, 9am - 6pm</p>
+                
+                <div class="info-title" style="margin-top: 40px;">Follow Our Journey</div>
+                <a href="#" class="social-link"><span>Instagram</span> @KML_furniture</a>
+                <a href="#" class="social-link"><span>TikTok</span> @KML_furniture</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div style="font-size: 12px; color: #888;">&copy; 2026 KML Furniture. All rights reserved.</div>
+    </footer>
+
+</body>
+</html>
 
