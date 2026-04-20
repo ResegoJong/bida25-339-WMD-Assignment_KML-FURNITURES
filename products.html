@@ -2,77 +2,142 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Collection | KML Furniture</title>
     <style>
-        /* Shared Styles from Index */
-        body { margin: 0; font-family: sans-serif; color: #333; background-color: #f9f8f4; }
-        
-        .navbar { display: flex; justify-content: space-between; align-items: center; padding: 20px 50px; background: white; }
-        .logo { font-size: 20px; font-weight: bold; letter-spacing: 2px; }
-        .links a { margin-left: 25px; text-decoration: none; color: #333; }
-        .active { text-decoration: underline !important; font-weight: bold; }
-
-        /* Products Page Specifics */
-        .container { max-width: 1200px; margin: 50px auto; padding: 0 20px; }
-        
-        h2 { font-family: serif; font-size: 32px; text-transform: uppercase; margin-bottom: 40px; }
-
-        /* The Grid */
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+        /* Base Styles */
+        body { 
+            margin: 0; 
+            font-family: sans-serif; 
+            color: #333; 
+            background-color: #fdfdfb; 
         }
 
-        /* Product Card */
-        .product-card {
+        /* Nav Bar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
             background: white;
-            border: 8px solid #a4b48b; /* The signature sage border */
-            text-align: center;
-            padding-bottom: 20px;
-            transition: transform 0.3s ease;
+            border-bottom: 1px solid #eee;
         }
 
-        .product-card:hover { transform: translateY(-5px); }
+        .logo { font-size: 18px; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; }
+        
+        .links a { 
+            margin-left: 15px; 
+            text-decoration: none; 
+            color: #333; 
+            font-size: 13px; 
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        h2 {
+            font-family: serif;
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 40px;
+            font-weight: 400;
+            text-transform: uppercase;
+        }
+
+        /* --- THE RESPONSIVE GRID (Table Look) --- */
+        .product-table {
+            display: grid;
+            /* Default: 3 columns for Laptop */
+            grid-template-columns: repeat(3, 1fr); 
+            border-top: 1px solid #a4b48b;
+            border-left: 1px solid #a4b48b;
+        }
+
+        /* Tablet View */
+        @media (max-width: 992px) {
+            .product-table {
+                grid-template-columns: repeat(2, 1fr); 
+            }
+        }
+
+        /* Phone View */
+        @media (max-width: 600px) {
+            .product-table {
+                grid-template-columns: 1fr; 
+            }
+            .navbar {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+        }
+
+        /* Table Cells */
+        .product-cell {
+            border-right: 1px solid #a4b48b;
+            border-bottom: 1px solid #a4b48b;
+            padding: 40px 20px;
+            text-align: center;
+            background-color: white;
+            transition: background-color 0.3s;
+        }
+
+        .product-cell:hover {
+            background-color: #f9f9f7;
+        }
 
         .product-image {
             width: 100%;
-            height: 250px;
+            height: auto;
+            aspect-ratio: 1 / 1; 
             object-fit: cover;
-            background-color: #eee;
+            margin-bottom: 25px;
         }
 
-        .product-info { padding: 20px; }
-        
-        .product-info h3 { 
-            font-size: 18px; 
-            margin: 10px 0; 
-            text-transform: uppercase; 
+        .product-title {
+            font-family: serif;
+            font-size: 16px;
+            margin: 10px 0;
+            text-transform: uppercase;
             letter-spacing: 1px;
         }
 
-        .price { 
-            font-size: 16px; 
-            color: #666; 
-            margin-bottom: 20px; 
+        .price {
             display: block;
+            color: #777;
+            margin-bottom: 20px;
+            font-size: 15px;
+            font-weight: bold;
         }
 
-        /* Add to Cart Button */
-        .add-btn {
-            background-color: #a4b48b;
-            color: white;
-            padding: 10px 25px;
+        /* Minimal Text Link */
+        .add-link {
+            color: #a4b48b;
             text-decoration: none;
-            font-size: 14px;
-            border-radius: 4px;
-            display: inline-block;
-            transition: opacity 0.2s;
+            font-size: 12px;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-bottom: 1px solid #a4b48b;
+            padding-bottom: 2px;
+            transition: all 0.2s;
         }
 
-        .add-btn:hover { opacity: 0.8; }
+        .add-link:hover {
+            color: #333;
+            border-bottom-color: #333;
+        }
 
-        footer { background-color: #333; color: white; padding: 20px; text-align: center; margin-top: 50px; }
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 30px;
+            text-align: center;
+            margin-top: 60px;
+        }
     </style>
 </head>
 <body>
@@ -81,7 +146,7 @@
         <div class="logo">KML FURNITURE</div>
         <div class="links">
             <a href="index.html">Home</a>
-            <a href="#" class="active">Products</a>
+            <a href="#" style="font-weight: bold;">Products</a>
             <a href="about.html">About</a>
             <a href="contact.html">Contact</a>
         </div>
@@ -90,41 +155,54 @@
     <div class="container">
         <h2>Our Collection</h2>
         
-        <div class="product-grid">
-            <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1533090161767-e6ffed986c88?auto=format&fit=crop&w=500" alt="Dining Set" class="product-image">
-                <div class="product-info">
-                    <h3>Dining Set</h3>
-                    <span class="price">P1,299.00</span>
-                    <a href="#" class="add-btn">ADD TO CART</a>
-                </div>
+        <div class="product-table">
+            <div class="product-cell">
+                <img src="https://images.unsplash.com/photo-1533090161767-e6ffed986c88?auto=format&fit=crop&w=500" class="product-image">
+                <div class="product-title">Dining Set</div>
+                <span class="price">P1,299.00</span>
+                <a href="#" class="add-link">Add to Cart</a>
             </div>
 
-            <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1592078615290-033ee584e277?auto=format&fit=crop&w=500" alt="Lounge Chair" class="product-image">
-                <div class="product-info">
-                    <h3>Lounge Chair</h3>
-                    <span class="price">P450.00</span>
-                    <a href="#" class="add-btn">ADD TO CART</a>
-                </div>
+            <div class="product-cell">
+                <img src="https://images.unsplash.com/photo-1592078615290-033ee584e277?auto=format&fit=crop&w=500" class="product-image">
+                <div class="product-title">Lounge Chair</div>
+                <span class="price">P450.00</span>
+                <a href="#" class="add-link">Add to Cart</a>
             </div>
 
-            <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?auto=format&fit=crop&w=500" alt="Media Console" class="product-image">
-                <div class="product-info">
-                    <h3>Television Stand</h3>
-                    <span class="price">P890.00</span>
-                    <a href="#" class="add-btn">ADD TO CART</a>
-                </div>
+            <div class="product-cell">
+                <img src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?auto=format&fit=crop&w=500" class="product-image">
+                <div class="product-title">Television Stand</div>
+                <span class="price">P890.00</span>
+                <a href="#" class="add-link">Add to Cart</a>
             </div>
-            
+
+            <div class="product-cell">
+                <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=500" class="product-image">
+                <div class="product-title">Décor Vase</div>
+                <span class="price">P75.00</span>
+                <a href="#" class="add-link">Add to Cart</a>
             </div>
+
+            <div class="product-cell">
+                <img src="https://images.unsplash.com/photo-1584144141200-81cb45ef42d2?auto=format&fit=crop&w=500" class="product-image">
+                <div class="product-title">Pillow Set</div>
+                <span class="price">P120.00</span>
+                <a href="#" class="add-link">Add to Cart</a>
+            </div>
+
+            <div class="product-cell">
+                <img src="https://images.unsplash.com/photo-1567016432779-094069958ad5?auto=format&fit=crop&w=500" class="product-image">
+                <div class="product-title">Coffee Table</div>
+                <span class="price">P680.00</span>
+                <a href="#" class="add-link">Add to Cart</a>
+            </div>
+        </div>
     </div>
 
     <footer>
-        &copy; 2026 KML Furniture. All rights reserved.
+        <div style="font-size: 12px; color: #888;">&copy; 2026 KML Furniture. All rights reserved.</div>
     </footer>
 
 </body>
 </html>
-
