@@ -1,1 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | KML Furniture</title>
+    <style>
+        /* Shared Styles */
+        body { 
+            margin: 0; 
+            font-family: sans-serif; 
+            color: #333; 
+            background-color: #fdfdfb; 
+            line-height: 1.6;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background: white;
+            border-bottom: 1px solid #eee;
+        }
+
+        .logo { font-size: 18px; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; }
+        .links a { margin-left: 15px; text-decoration: none; color: #333; font-size: 13px; }
+
+        /* Hero Section */
+        .about-hero {
+            background-color: #f4f4f2;
+            padding: 80px 5%;
+            text-align: center;
+        }
+
+        .about-hero h1 {
+            font-family: serif;
+            font-size: 3rem;
+            margin: 0;
+            color: #333;
+        }
+
+        /* Mission Section (Split Screen) */
+        .mission-section {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 5%;
+        }
+
+        .mission-text {
+            flex: 1;
+            min-width: 300px;
+            padding: 40px;
+        }
+
+        .mission-text h2 {
+            font-family: serif;
+            font-size: 2rem;
+            color: #a4b48b;
+        }
+
+        .mission-image {
+            flex: 1;
+            min-width: 300px;
+            height: 400px;
+            background-image: url('https://images.unsplash.com/photo-1581539250439-c96689b516dd?auto=format&fit=crop&w=800');
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Why Choose Us Grid */
+        .values-container {
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 0 5%;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            border-top: 1px solid #a4b48b;
+            border-left: 1px solid #a4b48b;
+        }
+
+        .value-cell {
+            padding: 40px;
+            border-right: 1px solid #a4b48b;
+            border-bottom: 1px solid #a4b48b;
+            text-align: center;
+        }
+
+        .value-cell h3 {
+            font-family: serif;
+            text-transform: uppercase;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 900px) {
+            .values-grid { grid-template-columns: repeat(2, 1fr); }
+            .mission-section { flex-direction: column; }
+            .mission-image { width: 100%; order: -1; }
+        }
+
+        @media (max-width: 600px) {
+            .values-grid { grid-template-columns: 1fr; }
+            .about-hero h1 { font-size: 2rem; }
+            .navbar { flex-direction: column; gap: 15px; }
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 30px;
+            text-align: center;
+            margin-top: 80px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <div class="logo">KML FURNITURE</div>
+        <div class="links">
+            <a href="index.html">Home</a>
+            <a href="products.html">Products</a>
+            <a href="#" style="font-weight: bold;">About</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </div>
+
+    <section class="about-hero">
+        <h1>Crafting Comfort Since 2026</h1>
+    </section>
+
+    <div class="mission-section">
+        <div class="mission-text">
+            <h2>Our Mission</h2>
+            <p>At KML Furniture, we believe that your home should be a reflection of your soul. We don't just sell furniture; we curate pieces that bring harmony, style, and enduring quality to your living spaces.</p>
+            <p>Every piece in our collection is hand-selected for its craftsmanship and timeless aesthetic, ensuring that your investment lasts for generations.</p>
+        </div>
+        <div class="mission-image"></div>
+    </div>
+
+    <div class="values-container">
+        <h2 style="text-align: center; font-family: serif; margin-bottom: 40px;">Why Choose Us</h2>
+        <div class="values-grid">
+            <div class="value-cell">
+                <h3>Quality</h3>
+                <p>We use only premium materials, from sustainably sourced oak to genuine linen fabrics.</p>
+            </div>
+            <div class="value-cell">
+                <h3>Design</h3>
+                <p>Our designs blend modern minimalism with mid-century warmth for a timeless look.</p>
+            </div>
+            <div class="value-cell">
+                <h3>Sustainability</h3>
+                <p>Every product is made with the planet in mind, using eco-friendly production methods.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div style="font-size: 12px; color: #888;">&copy; 2026 KML Furniture. All rights reserved.</div>
+    </footer>
+
+</body>
+</html>
 
